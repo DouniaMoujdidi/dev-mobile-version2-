@@ -20,6 +20,7 @@ int drawable rounded_card 0x7f030008
 int drawable rounded_outline_button 0x7f030009
 int drawable rounded_top_card 0x7f03000a
 int drawable social_button_background 0x7f03000b
+int drawable transparent_splash_icon 0x7f03000f
 int drawable travel_balloons_bg 0x7f03000c
 int drawable travel_beach_bg 0x7f03000d
 int drawable travelin_logo 0x7f03000e

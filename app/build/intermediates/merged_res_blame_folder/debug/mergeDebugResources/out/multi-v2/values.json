@@ -4,30 +4,13 @@
             "outputFile": "com.example.travelin.app-mergeDebugResources-2:/values/values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\hp\\Documents\\Codex\\2026-05-31\\je-veux-que-tu-r-alises\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "7,8,2,3,5,6,4",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "273,320,55,97,184,228,144",
-                        "endColumns": "46,48,41,46,43,44,39",
-                        "endOffsets": "315,364,92,139,223,268,179"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "55,102,151,193,240,284,329",
-                        "endColumns": "46,48,41,46,43,44,39",
-                        "endOffsets": "97,146,188,235,279,324,364"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\hp\\Documents\\Codex\\2026-05-31\\je-veux-que-tu-r-alises\\app\\src\\main\\res\\values\\dimens.xml",
+                    "source": "C:\\Users\\info\\Desktop\\mobile-project\\dev-mobile\\app\\src\\main\\res\\values\\dimens.xml",
                     "from": {
                         "startLines": "4,3,2",
                         "startColumns": "4,4,4",
-                        "startOffsets": "144,101,55",
+                        "startOffsets": "148,104,57",
                         "endColumns": "44,42,45",
-                        "endOffsets": "184,139,96"
+                        "endOffsets": "188,142,98"
                     },
                     "to": {
                         "startLines": "9,10,11",
@@ -38,13 +21,13 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\hp\\Documents\\Codex\\2026-05-31\\je-veux-que-tu-r-alises\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "C:\\Users\\info\\Desktop\\mobile-project\\dev-mobile\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
-                        "startOffsets": "55,101",
+                        "startOffsets": "57,104",
                         "endColumns": "45,79",
-                        "endOffsets": "96,176"
+                        "endOffsets": "98,179"
                     },
                     "to": {
                         "startLines": "12,13",
@@ -55,14 +38,31 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\hp\\Documents\\Codex\\2026-05-31\\je-veux-que-tu-r-alises\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\info\\Desktop\\mobile-project\\dev-mobile\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "7,8,2,3,5,6,4",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "280,328,57,100,189,234,148",
+                        "endColumns": "46,48,41,46,43,44,39",
+                        "endOffsets": "322,372,94,142,228,274,183"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,102,151,193,240,284,329",
+                        "endColumns": "46,48,41,46,43,44,39",
+                        "endOffsets": "97,146,188,235,279,324,364"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\info\\Desktop\\mobile-project\\dev-mobile\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "55",
+                        "startOffsets": "57",
                         "endLines": "9",
                         "endColumns": "12",
-                        "endOffsets": "517"
+                        "endOffsets": "526"
                     },
                     "to": {
                         "startLines": "14",

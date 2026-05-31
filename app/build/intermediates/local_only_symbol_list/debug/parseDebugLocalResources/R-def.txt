@@ -22,6 +22,7 @@ drawable rounded_card
 drawable rounded_outline_button
 drawable rounded_top_card
 drawable social_button_background
+drawable transparent_splash_icon
 drawable travel_balloons_bg
 drawable travel_beach_bg
 drawable travelin_logo
