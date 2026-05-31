@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_sign_in"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -14,17 +15,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_overlay" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|end"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="24dp"
-        android:text="English ˅"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        android:textStyle="bold" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -53,12 +43,13 @@
                     android:id="@+id/txt_sign_in_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Let’s Travel you in."
+                    android:text="Let's Travel you in."
                     android:textColor="@color/text_dark"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/txt_sign_in_subtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
@@ -67,6 +58,7 @@
                     android:textSize="14sp" />
 
                 <EditText
+                    android:id="@+id/edt_email"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
                     android:layout_marginTop="26dp"
@@ -78,6 +70,7 @@
                     android:textSize="13sp" />
 
                 <EditText
+                    android:id="@+id/edt_password"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
                     android:layout_marginTop="14dp"
@@ -111,6 +104,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/txt_social_label"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -150,10 +144,11 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/txt_no_account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"
-                android:text="I don’t have a account?"
+                android:text="I don't have an account?"
                 android:textColor="@color/white"
                 android:textSize="13sp" />
 
@@ -170,4 +165,19 @@
                 android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
+
+    <TextView
+        android:id="@+id/txt_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="8dp"
+        android:text="English v"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold" />
 </FrameLayout>

@@ -9,63 +9,63 @@
 9        android:targetSdkVersion="35" />
 10
 11    <application
-11-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:4:5-37:19
+11-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:4:5-37:19
 12        android:allowBackup="true"
-12-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:5:9-35
+12-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:5:9-35
 13        android:debuggable="true"
 14        android:extractNativeLibs="false"
 15        android:icon="@mipmap/ic_launcher"
-15-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:6:9-43
+15-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:6:9-43
 16        android:label="@string/app_name"
-16-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:7:9-41
+16-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:7:9-41
 17        android:roundIcon="@mipmap/ic_launcher_round"
-17-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:8:9-54
+17-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:8:9-54
 18        android:supportsRtl="true"
-18-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:9:9-35
+18-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:9:9-35
 19        android:testOnly="true"
 20        android:theme="@style/Theme.Travelin" >
-20-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:10:9-46
+20-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:10:9-46
 21        <activity
-21-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:12:9-15:52
+21-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:12:9-15:52
 22            android:name="com.example.travelin.SignUpActivity"
-22-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:13:13-43
+22-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:13:13-43
 23            android:exported="false"
-23-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:14:13-37
+23-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:14:13-37
 24            android:screenOrientation="portrait" />
-24-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:15:13-49
+24-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:15:13-49
 25        <activity
-25-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:17:9-20:52
+25-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:17:9-20:52
 26            android:name="com.example.travelin.SignInActivity"
-26-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:18:13-43
+26-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:18:13-43
 27            android:exported="false"
-27-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:19:13-37
+27-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:19:13-37
 28            android:screenOrientation="portrait" />
-28-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:20:13-49
+28-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:20:13-49
 29        <activity
-29-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:22:9-25:52
+29-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:22:9-25:52
 30            android:name="com.example.travelin.GetStartedActivity"
-30-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:23:13-47
+30-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:23:13-47
 31            android:exported="false"
-31-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:24:13-37
+31-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:24:13-37
 32            android:screenOrientation="portrait" />
-32-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:25:13-49
+32-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:25:13-49
 33        <activity
-33-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:27:9-35:20
+33-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:27:9-35:20
 34            android:name="com.example.travelin.SplashActivity"
-34-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:28:13-43
+34-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:28:13-43
 35            android:exported="true"
-35-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:29:13-36
+35-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:29:13-36
 36            android:screenOrientation="portrait" >
-36-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:30:13-49
+36-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:30:13-49
 37            <intent-filter>
-37-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:31:13-34:29
+37-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:31:13-34:29
 38                <action android:name="android.intent.action.MAIN" />
-38-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:32:17-69
-38-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:32:25-66
+38-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:32:17-69
+38-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:32:25-66
 39
 40                <category android:name="android.intent.category.LAUNCHER" />
-40-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:33:17-77
-40-->C:\Users\info\Desktop\mobile-project\dev-mobile\app\src\main\AndroidManifest.xml:33:27-74
+40-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:33:17-77
+40-->C:\Users\hp\Desktop\dev-mobile\app\src\main\AndroidManifest.xml:33:27-74
 41            </intent-filter>
 42        </activity>
 43    </application>

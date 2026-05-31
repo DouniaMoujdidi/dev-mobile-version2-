@@ -4,24 +4,7 @@
             "outputFile": "com.example.travelin.app-mergeDebugResources-2:/values/values.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\info\\Desktop\\mobile-project\\dev-mobile\\app\\src\\main\\res\\values\\dimens.xml",
-                    "from": {
-                        "startLines": "4,3,2",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "148,104,57",
-                        "endColumns": "44,42,45",
-                        "endOffsets": "188,142,98"
-                    },
-                    "to": {
-                        "startLines": "9,10,11",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "369,414,457",
-                        "endColumns": "44,42,45",
-                        "endOffsets": "409,452,498"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\info\\Desktop\\mobile-project\\dev-mobile\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "C:\\Users\\hp\\Desktop\\dev-mobile\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\info\\Desktop\\mobile-project\\dev-mobile\\app\\src\\main\\res\\values\\colors.xml",
+                    "source": "C:\\Users\\hp\\Desktop\\dev-mobile\\app\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "4,3,2",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "148,104,57",
+                        "endColumns": "44,42,45",
+                        "endOffsets": "188,142,98"
+                    },
+                    "to": {
+                        "startLines": "9,10,11",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "369,414,457",
+                        "endColumns": "44,42,45",
+                        "endOffsets": "409,452,498"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\hp\\Desktop\\dev-mobile\\app\\src\\main\\res\\values\\colors.xml",
                     "from": {
                         "startLines": "7,8,2,3,5,6,4",
                         "startColumns": "4,4,4,4,4,4,4",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\info\\Desktop\\mobile-project\\dev-mobile\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\hp\\Desktop\\dev-mobile\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
