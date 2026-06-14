@@ -4,7 +4,7 @@
             "outputFile": "com.example.travelin.app-mergeDebugResources-48:/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\hp\\.gradle\\caches\\9.0.0\\transforms\\8cda5b4ae167a886fe1493748a6c7cd4\\transformed\\appcompat-1.7.0\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\hp\\.gradle\\caches\\9.0.0\\transforms\\7abbc9d60a9967e24cdf6d3e8a8d69a4\\transformed\\appcompat-1.7.1\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

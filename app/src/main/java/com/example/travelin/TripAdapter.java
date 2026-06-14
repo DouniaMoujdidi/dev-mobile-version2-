@@ -14,13 +14,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder> {
     private final List<Trip> trips;
 
     public TripAdapter(List<Trip> trips) {
-        this.trips = trips;
+        this.trips = new ArrayList<>(trips);
+    }
+
+    public void setTrips(List<Trip> newTrips) {
+        trips.clear();
+        trips.addAll(newTrips);
+        notifyDataSetChanged();
     }
 
     @NonNull

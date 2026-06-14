@@ -7,6 +7,9 @@
     <color name="text_dark">#173D42</color>
     <color name="text_muted">#668083</color>
     <color name="white">#FFFFFF</color>
+    <dimen name="add_trip_button_height">64dp</dimen>
+    <dimen name="add_trip_card_radius">14dp</dimen>
+    <dimen name="add_trip_notes_height">104dp</dimen>
     <dimen name="button_radius">24dp</dimen>
     <dimen name="card_radius">22dp</dimen>
     <dimen name="screen_padding">24dp</dimen>

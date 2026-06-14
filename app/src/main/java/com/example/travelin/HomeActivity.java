@@ -1,11 +1,11 @@
 package com.example.travelin;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,22 +17,27 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends AppCompatActivity {
+    private TripAdapter tripAdapter;
+    private TripDao tripDao;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         updateUserHeader();
+        tripDao = new TripDao(this);
 
         RecyclerView tripsRecyclerView = findViewById(R.id.recycler_trips);
         tripsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         tripsRecyclerView.setNestedScrollingEnabled(true);
-        tripsRecyclerView.setAdapter(new TripAdapter(createTrips()));
+        tripAdapter = new TripAdapter(new ArrayList<>());
+        tripsRecyclerView.setAdapter(tripAdapter);
 
         FloatingActionButton addTripButton = findViewById(R.id.fab_add_trip);
         addTripButton.setOnClickListener(v ->
-                Toast.makeText(this, "Add trip clicked", Toast.LENGTH_SHORT).show());
+                new TripTypeBottomSheetFragment().show(getSupportFragmentManager(), "TripTypeBottomSheet"));
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
@@ -49,6 +54,15 @@ public class HomeActivity extends Activity {
             }
             return false;
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (tripAdapter != null && tripDao != null) {
+            List<Trip> trips = tripDao.getTripsForHome(getConnectedUserId());
+            tripAdapter.setTrips(trips.isEmpty() ? createTrips() : trips);
+        }
     }
 
     private void updateUserHeader() {
@@ -77,6 +91,11 @@ public class HomeActivity extends Activity {
         }
 
         return "Traveler";
+    }
+
+    private String getConnectedUserId() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        return user == null ? "guest" : user.getUid();
     }
 
     private String getInitials(String name) {
