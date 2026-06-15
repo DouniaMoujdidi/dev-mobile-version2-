@@ -84,6 +84,14 @@
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
+            android:name="com.example.travelin.TripDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.travelin.AddStepActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.example.travelin.HomeActivity"
             android:exported="false"
             android:screenOrientation="portrait" />

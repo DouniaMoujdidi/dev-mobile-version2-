@@ -232,6 +232,21 @@
             ]
         },
         {
+            "outputFile": "C:\\Users\\hp\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\values-v35_values-v35.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\hp\\.gradle\\caches\\9.0.0\\transforms\\3e61de47fb0d42501fbaad28d5c450e2\\transformed\\material-1.13.0\\res\\values-v35\\values-v35.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,149,247,349",
+                        "endColumns": "93,97,101,99",
+                        "endOffsets": "144,242,344,444"
+                    }
+                }
+            ]
+        },
+        {
             "outputFile": "C:\\Users\\hp\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\values-en-rIN_values-en-rIN.arsc.flat",
             "map": [
                 {
@@ -300,21 +315,6 @@
                         "startOffsets": "3707,3805,3902,4011",
                         "endColumns": "97,96,108,98",
                         "endOffsets": "3800,3897,4006,4105"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "C:\\Users\\hp\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\values-v35_values-v35.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\hp\\.gradle\\caches\\9.0.0\\transforms\\3e61de47fb0d42501fbaad28d5c450e2\\transformed\\material-1.13.0\\res\\values-v35\\values-v35.xml",
-                    "from": {
-                        "startLines": "2,3,4,5",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,149,247,349",
-                        "endColumns": "93,97,101,99",
-                        "endOffsets": "144,242,344,444"
                     }
                 }
             ]

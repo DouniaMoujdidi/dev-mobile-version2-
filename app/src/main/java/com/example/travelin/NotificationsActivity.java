@@ -35,7 +35,6 @@ public class NotificationsActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.recycler_notifications);
 
         backButton.setOnClickListener(v -> finish());
-
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new NotificationAdapter(createNotifications(), item ->
                 Toast.makeText(this, item.getTitle(), Toast.LENGTH_SHORT).show()));
@@ -65,7 +64,7 @@ public class NotificationsActivity extends AppCompatActivity {
         }
     }
 
-    private List<NotificationItem> createNotifications() {
+    static List<NotificationItem> createNotifications() {
         List<NotificationItem> items = new ArrayList<>();
         items.add(new NotificationItem(
                 "Aujourd'hui",

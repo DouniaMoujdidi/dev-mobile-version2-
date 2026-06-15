@@ -7,8 +7,6 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
@@ -56,10 +54,8 @@ public final class NotificationHelper {
                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
         );
 
-        Bitmap largeIcon = BitmapFactory.decodeResource(context.getResources(), R.mipmap.ic_launcher);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_notification)
-                .setLargeIcon(largeIcon)
                 .setContentTitle("Votre voyage à Marrakech approche !")
                 .setContentText("Votre voyage commence dans 2 jours.")
                 .setStyle(new NotificationCompat.BigTextStyle().bigText("Votre voyage commence dans 2 jours."))

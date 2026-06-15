@@ -41,6 +41,48 @@ public class TripDao {
         return db.insert(DatabaseHelper.TABLE_TRIPS, null, values);
     }
 
+    public long insertStep(long tripId, String locationName, String description, String date, String time) {
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("trip_id", tripId);
+        values.put("location_name", locationName);
+        values.put("description", description);
+        values.put("date", date);
+        values.put("time", time);
+        values.putNull("latitude");
+        values.putNull("longitude");
+        values.put("created_at", System.currentTimeMillis());
+        return db.insert(DatabaseHelper.TABLE_STEPS, null, values);
+    }
+
+    public List<TripStep> getStepsForTrip(long tripId) {
+        List<TripStep> steps = new ArrayList<>();
+        SQLiteDatabase db = databaseHelper.getReadableDatabase();
+        Cursor cursor = db.query(
+                DatabaseHelper.TABLE_STEPS,
+                new String[]{"id", "location_name", "description", "date", "time"},
+                "trip_id=?",
+                new String[]{String.valueOf(tripId)},
+                null,
+                null,
+                "date, time"
+        );
+        try {
+            while (cursor.moveToNext()) {
+                steps.add(new TripStep(
+                        cursor.getLong(0),
+                        cursor.getString(1),
+                        cursor.getString(2),
+                        cursor.getString(3),
+                        cursor.getString(4)
+                ));
+            }
+        } finally {
+            cursor.close();
+        }
+        return steps;
+    }
+
     public List<Trip> getTripsForHome(String userId) {
         List<Trip> upcoming = new ArrayList<>();
         List<Trip> past = new ArrayList<>();

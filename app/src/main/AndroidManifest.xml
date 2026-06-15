@@ -46,6 +46,16 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".TripDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".AddStepActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".HomeActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
