@@ -15,7 +15,7 @@ import java.util.Locale;
 
 public class TripDao {
     private static final SimpleDateFormat STORAGE_FORMAT = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
-    private static final SimpleDateFormat DISPLAY_FORMAT = new SimpleDateFormat("dd MMM yyyy", Locale.US);
+    private static final SimpleDateFormat DISPLAY_FORMAT = new SimpleDateFormat("dd MMM yyyy", Locale.FRENCH);
 
     private final DatabaseHelper databaseHelper;
 
@@ -53,6 +53,15 @@ public class TripDao {
         values.putNull("longitude");
         values.put("created_at", System.currentTimeMillis());
         return db.insert(DatabaseHelper.TABLE_STEPS, null, values);
+    }
+
+    public long insertStepPhoto(long stepId, String photoUri) {
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("step_id", stepId);
+        values.put("photo_uri", photoUri);
+        values.put("created_at", System.currentTimeMillis());
+        return db.insert(DatabaseHelper.TABLE_STEP_PHOTOS, null, values);
     }
 
     public List<TripStep> getStepsForTrip(long tripId) {
@@ -110,8 +119,8 @@ public class TripDao {
             cursor.close();
         }
 
-        applySections(upcoming, "UPCOMING");
-        applySections(past, "PAST TRIPS");
+        applySections(upcoming, "A VENIR");
+        applySections(past, "VOYAGES PASSES");
         upcoming.addAll(past);
         return upcoming;
     }
@@ -132,7 +141,7 @@ public class TripDao {
         trip.setCoverPhotoPath(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_COVER_PHOTO_PATH)));
         trip.setCreatedAt(cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COL_CREATED_AT)));
         trip.setDates(formatDateRange(trip.getStartDate(), trip.getEndDate()));
-        trip.setLocations("1 location");
+        trip.setLocations("1 lieu");
         trip.setImageResId(Trip.TYPE_PAST.equals(trip.getTripType()) ? R.drawable.travel_balloons_bg : R.drawable.travel_beach_bg);
         if (TextUtils.isEmpty(trip.getName())) {
             trip.setName(trip.getDestination());

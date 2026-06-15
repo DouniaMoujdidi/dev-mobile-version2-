@@ -119,7 +119,7 @@ public class SignInActivity extends Activity {
 
             @Override
             public void onCancel() {
-                Toast.makeText(SignInActivity.this, "Facebook sign in cancelled", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignInActivity.this, "Connexion Facebook annulee", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -145,7 +145,7 @@ public class SignInActivity extends Activity {
                 .addOnCompleteListener(task -> {
                     setLoading(false);
                     if (task.isSuccessful()) {
-                        Toast.makeText(this, "Signed in successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Connexion reussie", Toast.LENGTH_SHORT).show();
                         openHome();
                     } else {
                         showAuthError(task.getException());
@@ -160,7 +160,7 @@ public class SignInActivity extends Activity {
 
         String email = emailEditText.getText().toString().trim();
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            emailEditText.setError("Enter a valid email first");
+            emailEditText.setError("Entrez d'abord un e-mail valide");
             emailEditText.requestFocus();
             return;
         }
@@ -168,7 +168,7 @@ public class SignInActivity extends Activity {
         auth.sendPasswordResetEmail(email)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(this, "Password reset email sent", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "E-mail de reinitialisation envoye", Toast.LENGTH_SHORT).show();
                     } else {
                         showAuthError(task.getException());
                     }
@@ -210,7 +210,7 @@ public class SignInActivity extends Activity {
         auth.signInWithCredential(credential)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(this, "Google sign in successful", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Connexion Google reussie", Toast.LENGTH_SHORT).show();
                         openHome();
                     } else {
                         showAuthError(task.getException());
@@ -223,7 +223,7 @@ public class SignInActivity extends Activity {
         auth.signInWithCredential(credential)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(this, "Facebook sign in successful", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Connexion Facebook reussie", Toast.LENGTH_SHORT).show();
                         openHome();
                     } else {
                         showAuthError(task.getException());
@@ -240,12 +240,12 @@ public class SignInActivity extends Activity {
 
     private boolean validateEmailAndPassword(String email, String password) {
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            emailEditText.setError("Enter a valid email");
+            emailEditText.setError("Entrez un e-mail valide");
             emailEditText.requestFocus();
             return false;
         }
         if (password.length() < 6) {
-            passwordEditText.setError("Password must be at least 6 characters");
+            passwordEditText.setError("Le mot de passe doit contenir au moins 6 caracteres");
             passwordEditText.requestFocus();
             return false;
         }
@@ -256,7 +256,7 @@ public class SignInActivity extends Activity {
         if (auth != null) {
             return true;
         }
-        Toast.makeText(this, "Add app/google-services.json from Firebase Console first", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Ajoutez d'abord app/google-services.json depuis Firebase Console", Toast.LENGTH_LONG).show();
         return false;
     }
 
@@ -264,7 +264,7 @@ public class SignInActivity extends Activity {
         if (!getWebClientId().startsWith("YOUR_")) {
             return true;
         }
-        Toast.makeText(this, "Configure default_web_client_id from Firebase", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Configurez default_web_client_id depuis Firebase", Toast.LENGTH_LONG).show();
         return false;
     }
 
@@ -286,18 +286,18 @@ public class SignInActivity extends Activity {
                 && !getString(R.string.facebook_client_token).startsWith("YOUR_")) {
             return true;
         }
-        Toast.makeText(this, "Configure Facebook App ID and Client Token", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Configurez l'App ID Facebook et le Client Token", Toast.LENGTH_LONG).show();
         return false;
     }
 
     private void showAuthError(Exception exception) {
-        String message = exception == null ? "Authentication failed" : exception.getMessage();
+        String message = exception == null ? "Authentification echouee" : exception.getMessage();
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
     private void setLoading(boolean isLoading) {
         signInButton.setEnabled(!isLoading);
-        signInButton.setText(isLoading ? "Please wait..." : "Sign In");
+        signInButton.setText(isLoading ? "Veuillez patienter..." : "Se connecter");
     }
 
     private void showLanguageMenu() {
@@ -349,16 +349,16 @@ public class SignInActivity extends Activity {
             noAccountText.setText("ليس لديك حساب؟");
             signUpButton.setText("إنشاء حساب");
         } else {
-            languageText.setText("English v");
-            setTitleWithPrimaryWord("Let's Travel you in.", "Travel");
-            subtitleText.setText("Discover the World with Every\nSign In");
-            emailEditText.setHint("Email or Phone Number");
-            passwordEditText.setHint("Password");
-            forgotPasswordText.setText("Forgot password?");
-            signInButton.setText("Sign In");
-            socialLabelText.setText("or sign in with");
-            noAccountText.setText("I don't have an account?");
-            signUpButton.setText("Sign Up");
+            languageText.setText("Francais v");
+            setTitleWithPrimaryWord("Connecte-toi avec Travel.", "Travel");
+            subtitleText.setText("Decouvre le monde a chaque\nconnexion");
+            emailEditText.setHint("E-mail ou numero de telephone");
+            passwordEditText.setHint("Mot de passe");
+            forgotPasswordText.setText("Mot de passe oublie ?");
+            signInButton.setText("Se connecter");
+            socialLabelText.setText("ou se connecter avec");
+            noAccountText.setText("Je n'ai pas de compte ?");
+            signUpButton.setText("Creer un compte");
         }
     }
 
@@ -374,7 +374,7 @@ public class SignInActivity extends Activity {
 
     private String getSavedLanguage() {
         SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        return preferences.getString(KEY_LANGUAGE, LANG_EN);
+        return preferences.getString(KEY_LANGUAGE, LANG_FR);
     }
 
     private void saveLanguage(String language) {

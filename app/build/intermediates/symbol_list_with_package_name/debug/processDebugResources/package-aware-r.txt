@@ -4144,6 +4144,7 @@ id ignore
 id ignoreRequest
 id image
 id img_beach
+id img_cover_photo
 id img_detail_hero
 id img_field_icon
 id img_notification_icon
@@ -4156,6 +4157,7 @@ id inline
 id input_date
 id input_description
 id input_location_name
+id input_search_trip
 id input_time
 id invisible
 id inward
@@ -4456,6 +4458,7 @@ id txt_have_account
 id txt_language
 id txt_nights
 id txt_no_account
+id txt_no_trips
 id txt_notification_date
 id txt_notification_description
 id txt_notification_section
@@ -4469,6 +4472,7 @@ id txt_social_label
 id txt_start_date
 id txt_trip_meta
 id txt_trip_name
+id txt_upload_photos
 id txt_user_greeting
 id txt_user_initials
 id unchecked

@@ -14,7 +14,7 @@
             android:id="@+id/img_detail_hero"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="Trip cover image"
+            android:contentDescription="Photo du voyage"
             android:scaleType="centerCrop"
             android:src="@drawable/travel_beach_bg" />
 
@@ -84,7 +84,7 @@
             android:clickable="true"
             android:focusable="true"
             android:gravity="center"
-            android:text="+  Add Step"
+            android:text="+  Ajouter une etape"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -95,7 +95,7 @@
             android:layout_height="54dp"
             android:layout_marginLeft="14dp"
             android:background="@drawable/detail_circle_button"
-            android:contentDescription="Share trip"
+            android:contentDescription="Partager le voyage"
             android:padding="15dp"
             android:src="@drawable/ic_detail_share" />
 
@@ -105,7 +105,7 @@
             android:layout_height="54dp"
             android:layout_marginLeft="12dp"
             android:background="@drawable/detail_circle_button"
-            android:contentDescription="Trip alerts"
+            android:contentDescription="Alertes du voyage"
             android:padding="15dp"
             android:src="@drawable/ic_detail_bell" />
     </LinearLayout>
@@ -159,7 +159,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Tap to view all locations"
+                        android:text="Appuyez pour voir tous les lieux"
                         android:textColor="#8CA0A8"
                         android:textSize="15sp" />
                 </LinearLayout>
@@ -169,7 +169,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="Trip Timeline"
+                android:text="Planning du voyage"
                 android:textColor="#071D2B"
                 android:textSize="24sp"
                 android:textStyle="bold" />

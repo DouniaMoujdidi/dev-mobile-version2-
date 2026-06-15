@@ -35,7 +35,7 @@
                         android:id="@+id/txt_user_greeting"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Hi, Paul"
+                        android:text="Bonjour, Paul"
                         android:textColor="@color/white"
                         android:textSize="25sp"
                         android:textStyle="bold" />
@@ -55,15 +55,21 @@
                     android:textStyle="bold" />
             </FrameLayout>
 
-            <TextView
+            <EditText
+                android:id="@+id/input_search_trip"
                 android:layout_width="match_parent"
                 android:layout_height="46dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/home_search_background"
                 android:drawablePadding="8dp"
                 android:gravity="center_vertical"
-                android:text="Where to go?"
-                android:textColor="#7B8894"
+                android:hint="Rechercher une destination"
+                android:inputType="text"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:singleLine="true"
+                android:textColor="#102A31"
+                android:textColorHint="#7B8894"
                 android:textSize="14sp" />
         </LinearLayout>
 
@@ -73,7 +79,7 @@
             android:paddingLeft="24dp"
             android:paddingTop="20dp"
             android:paddingRight="24dp"
-            android:text="My Trips"
+            android:text="Mes voyages"
             android:textColor="#102A31"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -89,6 +95,18 @@
             android:paddingLeft="18dp"
             android:paddingRight="18dp"
             android:paddingBottom="22dp" />
+
+        <TextView
+            android:id="@+id/txt_no_trips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:paddingBottom="24dp"
+            android:text="Aucun voyage trouve"
+            android:textColor="#5A6C73"
+            android:textSize="15sp"
+            android:visibility="gone" />
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -109,7 +127,7 @@
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="22dp"
         android:layout_marginBottom="84dp"
-        android:contentDescription="Add trip"
+        android:contentDescription="Ajouter un voyage"
         app:backgroundTint="@color/primary"
         app:srcCompat="@android:drawable/ic_input_add"
         app:tint="@color/white" />

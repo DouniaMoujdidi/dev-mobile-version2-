@@ -39,11 +39,11 @@ public class GetStartedActivity extends Activity {
     private void showLanguageMenu() {
         PopupMenu menu = new PopupMenu(this, languageText);
         menu.getMenu().add("English");
-        menu.getMenu().add("Français");
+        menu.getMenu().add("Francais");
         menu.getMenu().add("العربية");
         menu.setOnMenuItemClickListener(item -> {
             String selected = item.getTitle().toString();
-            if ("Français".equals(selected)) {
+            if ("Francais".equals(selected)) {
                 saveLanguage(LANG_FR);
                 applyLanguage(LANG_FR);
             } else if ("العربية".equals(selected)) {
@@ -63,23 +63,23 @@ public class GetStartedActivity extends Activity {
         getWindow().getDecorView().setLayoutDirection(isArabic ? View.LAYOUT_DIRECTION_RTL : View.LAYOUT_DIRECTION_LTR);
 
         if (LANG_FR.equals(language)) {
-            languageText.setText("Français v");
-            titleText.setText("Prêt à explorer\nau-delà des frontières ?");
+            languageText.setText("Francais v");
+            titleText.setText("Pret a explorer\nau-dela des frontieres ?");
             startButton.setText("Votre voyage commence ici");
         } else if (isArabic) {
             languageText.setText("العربية v");
             titleText.setText("هل أنت مستعد للاستكشاف\nوراء الحدود؟");
             startButton.setText("رحلتك تبدأ هنا");
         } else {
-            languageText.setText("English v");
-            titleText.setText("Ready to explore\nbeyond boundaries?");
-            startButton.setText("Your Journey Starts Here");
+            languageText.setText("Francais v");
+            titleText.setText("Pret a explorer\nau-dela des frontieres ?");
+            startButton.setText("Votre voyage commence ici");
         }
     }
 
     private String getSavedLanguage() {
         SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        return preferences.getString(KEY_LANGUAGE, LANG_EN);
+        return preferences.getString(KEY_LANGUAGE, LANG_FR);
     }
 
     private void saveLanguage(String language) {

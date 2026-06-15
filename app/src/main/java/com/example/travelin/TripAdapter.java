@@ -53,7 +53,7 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder
         holder.nameText.setText(trip.getName());
         holder.metaText.setText(trip.getDates() + "    " + trip.getLocations());
         holder.tripImage.setImageResource(trip.getImageResId());
-        if ("PAST TRIPS".equals(trip.getSection())) {
+        if ("VOYAGES PASSES".equals(trip.getSection()) || "PAST TRIPS".equals(trip.getSection())) {
             ColorMatrix matrix = new ColorMatrix();
             matrix.setSaturation(0f);
             holder.tripImage.setColorFilter(new ColorMatrixColorFilter(matrix));

@@ -4,7 +4,7 @@
             "outputFile": "com.example.travelin.app-mergeDebugResources-48:/values-land/values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\hp\\.gradle\\caches\\9.0.0\\transforms\\7abbc9d60a9967e24cdf6d3e8a8d69a4\\transformed\\appcompat-1.7.1\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\HP\\.gradle\\caches\\9.0.0\\transforms\\7abbc9d60a9967e24cdf6d3e8a8d69a4\\transformed\\appcompat-1.7.1\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\hp\\.gradle\\caches\\9.0.0\\transforms\\3e61de47fb0d42501fbaad28d5c450e2\\transformed\\material-1.13.0\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\HP\\.gradle\\caches\\9.0.0\\transforms\\3e61de47fb0d42501fbaad28d5c450e2\\transformed\\material-1.13.0\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,22,31,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

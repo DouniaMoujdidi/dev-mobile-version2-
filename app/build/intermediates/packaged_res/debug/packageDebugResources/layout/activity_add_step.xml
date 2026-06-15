@@ -56,7 +56,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Location Name"
+                android:text="Nom du lieu"
                 android:textColor="#071D2B"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -69,7 +69,7 @@
                 android:background="@drawable/add_step_field_background"
                 android:drawableLeft="@drawable/ic_detail_pin"
                 android:drawablePadding="12dp"
-                android:hint="e.g., Eiffel Tower"
+                android:hint="Ex. : Tour Eiffel"
                 android:inputType="textCapWords"
                 android:paddingLeft="18dp"
                 android:paddingRight="18dp"
@@ -93,7 +93,7 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/add_step_field_background"
                 android:gravity="top|start"
-                android:hint="What are you planning to do here?"
+                android:hint="Que prevoyez-vous de faire ici ?"
                 android:inputType="textMultiLine|textCapSentences"
                 android:paddingLeft="18dp"
                 android:paddingTop="18dp"
@@ -152,7 +152,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Time"
+                        android:text="Heure"
                         android:textColor="#071D2B"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -180,7 +180,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                android:text="Location on Map"
+                android:text="Lieu sur la carte"
                 android:textColor="#071D2B"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -222,7 +222,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:text="Tap to select Location"
+                        android:text="Appuyez pour choisir le lieu"
                         android:textColor="#29435C"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -232,7 +232,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                android:text="Add Photos"
+                android:text="Ajouter des photos"
                 android:textColor="#071D2B"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -261,10 +261,11 @@
                 </FrameLayout>
 
                 <TextView
+                    android:id="@+id/txt_upload_photos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:text="Upload photos"
+                    android:text="Importer des photos"
                     android:textColor="#29435C"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -273,7 +274,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="JPG, PNG up to 10MB"
+                    android:text="JPG, PNG jusqu'a 10 Mo"
                     android:textColor="#8A96A3"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -300,7 +301,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
-                    android:text="Save Step"
+                    android:text="Enregistrer l'etape"
                     android:textColor="@color/white"
                     android:textSize="17sp"
                     android:textStyle="bold" />

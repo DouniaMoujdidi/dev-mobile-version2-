@@ -5,12 +5,15 @@ import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -35,6 +38,9 @@ public class HomeActivity extends AppCompatActivity {
 
     private TripAdapter tripAdapter;
     private TripDao tripDao;
+    private final List<Trip> allTrips = new ArrayList<>();
+    private EditText searchInput;
+    private TextView noTripsText;
     private FrameLayout rootContainer;
     private LinearLayout navigationBar;
     private FloatingActionButton addTripButton;
@@ -50,6 +56,8 @@ public class HomeActivity extends AppCompatActivity {
 
         updateUserHeader();
         tripDao = new TripDao(this);
+        searchInput = findViewById(R.id.input_search_trip);
+        noTripsText = findViewById(R.id.txt_no_trips);
 
         RecyclerView tripsRecyclerView = findViewById(R.id.recycler_trips);
         tripsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -64,6 +72,20 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
         tripsRecyclerView.setAdapter(tripAdapter);
+        searchInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                filterTrips(s.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
 
         replaceBottomNavigation();
     }
@@ -106,7 +128,7 @@ public class HomeActivity extends AppCompatActivity {
         barParams.setMargins(dp(8), 0, dp(8), dp(7));
         root.addView(navigationBar, barParams);
 
-        String[] labels = {"Accueil", "Memories", "Explorer", "Notification", "Profil"};
+        String[] labels = {"Accueil", "Souvenirs", "Explorer", "Notifications", "Profil"};
         int[] icons = {
                 R.drawable.nav_home,
                 R.drawable.nav_memories,
@@ -161,13 +183,13 @@ public class HomeActivity extends AppCompatActivity {
             return;
         }
         if (index == 1) {
-            Toast.makeText(this, "Memories bientôt disponible", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Souvenirs bientot disponible", Toast.LENGTH_SHORT).show();
         } else if (index == 2) {
-            Toast.makeText(this, "Explorer bientôt disponible", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Explorer bientot disponible", Toast.LENGTH_SHORT).show();
         } else if (index == 3) {
             showNotificationsContent();
         } else {
-            Toast.makeText(this, "Profil bientôt disponible", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Profil bientot disponible", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -233,7 +255,9 @@ public class HomeActivity extends AppCompatActivity {
         }
         if (tripAdapter != null && tripDao != null) {
             List<Trip> trips = tripDao.getTripsForHome(getConnectedUserId());
-            tripAdapter.setTrips(trips.isEmpty() ? createTrips() : trips);
+            allTrips.clear();
+            allTrips.addAll(trips.isEmpty() ? createTrips() : trips);
+            filterTrips(searchInput == null ? "" : searchInput.getText().toString());
         }
     }
 
@@ -242,14 +266,14 @@ public class HomeActivity extends AppCompatActivity {
         TextView initialsText = findViewById(R.id.txt_user_initials);
 
         String name = getConnectedUserName();
-        greetingText.setText("Hi, " + name);
+        greetingText.setText("Bonjour, " + name);
         initialsText.setText(getInitials(name));
     }
 
     private String getConnectedUserName() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user == null) {
-            return "Traveler";
+            return "Voyageur";
         }
 
         String displayName = user.getDisplayName();
@@ -262,7 +286,7 @@ public class HomeActivity extends AppCompatActivity {
             return email.substring(0, email.indexOf("@")).trim();
         }
 
-        return "Traveler";
+        return "Voyageur";
     }
 
     private String getConnectedUserId() {
@@ -291,10 +315,54 @@ public class HomeActivity extends AppCompatActivity {
 
     private List<Trip> createTrips() {
         List<Trip> trips = new ArrayList<>();
-        trips.add(new Trip("UPCOMING", "Maldives Paradise", "Jun 15 - Jun 22, 2024", "5 locations", R.drawable.travel_beach_bg));
-        trips.add(new Trip(null, "Paris & Brussels", "Aug 5 - Aug 18, 2024", "8 locations", R.drawable.travel_balloons_bg));
-        trips.add(new Trip(null, "Swiss Alps Adventure", "Sep 10 - Sep 20, 2024", "4 locations", R.drawable.travel_beach_bg));
-        trips.add(new Trip("PAST TRIPS", "Venice Romance", "Mar 12 - Mar 19, 2024", "3 locations", R.drawable.travel_balloons_bg));
+        trips.add(new Trip("A VENIR", "Paradis aux Maldives", "15 juin - 22 juin 2024", "5 lieux", R.drawable.travel_beach_bg));
+        trips.add(new Trip(null, "Paris et Bruxelles", "5 aout - 18 aout 2024", "8 lieux", R.drawable.travel_balloons_bg));
+        trips.add(new Trip(null, "Aventure dans les Alpes suisses", "10 septembre - 20 septembre 2024", "4 lieux", R.drawable.travel_beach_bg));
+        trips.add(new Trip("VOYAGES PASSES", "Escapade a Venise", "12 mars - 19 mars 2024", "3 lieux", R.drawable.travel_balloons_bg));
         return trips;
+    }
+
+    private void filterTrips(String query) {
+        String normalizedQuery = query == null ? "" : query.trim().toLowerCase();
+        List<Trip> filtered = new ArrayList<>();
+        for (Trip trip : allTrips) {
+            if (TextUtils.isEmpty(normalizedQuery) || matchesTrip(trip, normalizedQuery)) {
+                filtered.add(trip);
+            }
+        }
+        applyFrenchSections(filtered);
+        tripAdapter.setTrips(filtered);
+        noTripsText.setVisibility(filtered.isEmpty() ? View.VISIBLE : View.GONE);
+    }
+
+    private boolean matchesTrip(Trip trip, String query) {
+        return contains(trip.getName(), query)
+                || contains(trip.getDestination(), query)
+                || contains(trip.getDates(), query)
+                || contains(trip.getLocations(), query)
+                || contains(trip.getHotelName(), query)
+                || contains(trip.getHotelAddress(), query)
+                || contains(trip.getNotes(), query);
+    }
+
+    private boolean contains(String value, String query) {
+        return value != null && value.toLowerCase().contains(query);
+    }
+
+    private void applyFrenchSections(List<Trip> trips) {
+        boolean hasUpcomingSection = false;
+        boolean hasPastSection = false;
+        for (Trip trip : trips) {
+            boolean past = Trip.TYPE_PAST.equals(trip.getTripType())
+                    || "VOYAGES PASSES".equals(trip.getSection())
+                    || "PAST TRIPS".equals(trip.getSection());
+            if (past) {
+                trip.setSection(hasPastSection ? null : "VOYAGES PASSES");
+                hasPastSection = true;
+            } else {
+                trip.setSection(hasUpcomingSection ? null : "A VENIR");
+                hasUpcomingSection = true;
+            }
+        }
     }
 }

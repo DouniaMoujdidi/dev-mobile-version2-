@@ -4,7 +4,7 @@
             "outputFile": "com.example.travelin.app-mergeDebugResources-48:/values-en-rCA/values-en-rCA.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\hp\\.gradle\\caches\\9.0.0\\transforms\\7abbc9d60a9967e24cdf6d3e8a8d69a4\\transformed\\appcompat-1.7.1\\res\\values-en-rCA\\values-en-rCA.xml",
+                    "source": "C:\\Users\\HP\\.gradle\\caches\\9.0.0\\transforms\\7abbc9d60a9967e24cdf6d3e8a8d69a4\\transformed\\appcompat-1.7.1\\res\\values-en-rCA\\values-en-rCA.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\hp\\.gradle\\caches\\9.0.0\\transforms\\48697de6e9f4aed2ccd1d374df6a8431\\transformed\\jetified-credentials-1.2.0-rc01\\res\\values-en-rCA\\values-en-rCA.xml",
+                    "source": "C:\\Users\\HP\\.gradle\\caches\\9.0.0\\transforms\\48697de6e9f4aed2ccd1d374df6a8431\\transformed\\jetified-credentials-1.2.0-rc01\\res\\values-en-rCA\\values-en-rCA.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\hp\\.gradle\\caches\\9.0.0\\transforms\\88c744f0f9675dd04f1d65d7c65d19e7\\transformed\\browser-1.4.0\\res\\values-en-rCA\\values-en-rCA.xml",
+                    "source": "C:\\Users\\HP\\.gradle\\caches\\9.0.0\\transforms\\88c744f0f9675dd04f1d65d7c65d19e7\\transformed\\browser-1.4.0\\res\\values-en-rCA\\values-en-rCA.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\hp\\.gradle\\caches\\9.0.0\\transforms\\0bdbf24bbc29c9a44cf47b58334d3523\\transformed\\core-1.13.0\\res\\values-en-rCA\\values-en-rCA.xml",
+                    "source": "C:\\Users\\HP\\.gradle\\caches\\9.0.0\\transforms\\0bdbf24bbc29c9a44cf47b58334d3523\\transformed\\core-1.13.0\\res\\values-en-rCA\\values-en-rCA.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

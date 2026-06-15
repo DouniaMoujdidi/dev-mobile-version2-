@@ -2,6 +2,7 @@ package com.example.travelin;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,6 +17,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
@@ -47,7 +50,18 @@ public class AddTripActivity extends AppCompatActivity {
     private EditText hotelAddressEditText;
     private EditText hotelPhoneEditText;
     private EditText notesEditText;
+    private ImageView coverImageView;
+    private String selectedCoverPhotoUri;
     private TripDao tripDao;
+    private final ActivityResultLauncher<String[]> coverPhotoPicker =
+            registerForActivityResult(new ActivityResultContracts.OpenDocument(), uri -> {
+                if (uri == null) {
+                    return;
+                }
+                getContentResolver().takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                selectedCoverPhotoUri = uri.toString();
+                coverImageView.setImageURI(uri);
+            });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +82,7 @@ public class AddTripActivity extends AppCompatActivity {
     private void bindViews() {
         ImageButton backButton = findViewById(R.id.btn_back);
         FrameLayout coverPhoto = findViewById(R.id.cover_photo);
+        coverImageView = findViewById(R.id.img_cover_photo);
         startDateText = findViewById(R.id.txt_start_date);
         endDateText = findViewById(R.id.txt_end_date);
         nightsText = findViewById(R.id.txt_nights);
@@ -99,14 +114,14 @@ public class AddTripActivity extends AppCompatActivity {
             hotelAddressEditText = addField(R.drawable.ic_field_hotel_address, "Adresse de l'hotel", "Ex. : 12 Rue Mohammed V, Marrakech", false);
             hotelPhoneEditText = addField(R.drawable.ic_field_phone, "Telephone de l'hotel", "Ex. : +212 6XX XXX XXX", false);
             notesEditText = addField(R.drawable.ic_field_notes, "Notes", "Ajouter des notes...", true);
-            addActionButton(R.drawable.ic_action_add_step, "Ajouter une etape\nmaintenant");
-            addActionButton(R.drawable.ic_action_take_photo, "Prendre une photo");
+            addActionButton(R.drawable.ic_action_add_step, "Ajouter une etape\nmaintenant", v -> saveTripAndOpenStep());
+            addActionButton(R.drawable.ic_action_take_photo, "Prendre une photo", v -> openCoverPhotoPicker());
         } else if (Trip.TYPE_PAST.equals(tripType)) {
             destinationEditText = addField(R.drawable.ic_field_destination, "Destination", "Ex. : Paris, France", false);
             tripNameEditText = addField(R.drawable.ic_field_trip_name, "Nom du voyage", "Ex. : Voyage a Paris", false);
             notesEditText = addField(R.drawable.ic_field_notes, "Notes souvenirs", "Decrivez vos souvenirs...", true);
-            addActionButton(R.drawable.ic_action_photos_memories, "Ajouter des photos\nsouvenirs");
-            addActionButton(R.drawable.ic_action_visited_steps, "Ajouter des etapes\nvisitees");
+            addActionButton(R.drawable.ic_action_photos_memories, "Ajouter des photos\nsouvenirs", v -> openCoverPhotoPicker());
+            addActionButton(R.drawable.ic_action_visited_steps, "Ajouter des etapes\nvisitees", v -> saveTripAndOpenStep());
         } else {
             destinationEditText = addField(R.drawable.ic_field_destination, "Destination", "Ex. : Istanbul, Turquie", false);
             tripNameEditText = addField(R.drawable.ic_field_trip_name, "Nom du voyage", "Ex. : Vacances d'ete 2024", false);
@@ -114,7 +129,7 @@ public class AddTripActivity extends AppCompatActivity {
             hotelAddressEditText = addField(R.drawable.ic_field_hotel_address, "Adresse de l'hotel", "Ex. : 12 Rue Mohammed V, Marrakech", false);
             hotelPhoneEditText = addField(R.drawable.ic_field_phone, "Telephone de l'hotel", "Ex. : +90 532 123 45 67", false);
             notesEditText = addField(R.drawable.ic_field_notes, "Notes", "Ajouter des notes...", true);
-            addWideActionButton(R.drawable.ic_add_trip_flight_route_image, "Ajouter des etapes prevues");
+            addWideActionButton(R.drawable.ic_add_trip_flight_route_image, "Ajouter des etapes prevues", v -> saveTripAndOpenStep());
         }
     }
 
@@ -141,7 +156,7 @@ public class AddTripActivity extends AppCompatActivity {
         return editText;
     }
 
-    private void addActionButton(int iconResId, String text) {
+    private void addActionButton(int iconResId, String text, View.OnClickListener listener) {
         LinearLayout button = new LinearLayout(this);
         button.setBackgroundResource(R.drawable.add_trip_action_background);
         button.setGravity(android.view.Gravity.CENTER_VERTICAL);
@@ -149,6 +164,7 @@ public class AddTripActivity extends AppCompatActivity {
         button.setPadding(dpToPx(10), 0, dpToPx(10), 0);
         button.setClickable(true);
         button.setFocusable(true);
+        button.setOnClickListener(listener);
 
         ImageView icon = new ImageView(this);
         icon.setImageResource(iconResId);
@@ -172,7 +188,7 @@ public class AddTripActivity extends AppCompatActivity {
         actionsContainer.addView(button, params);
     }
 
-    private void addWideActionButton(int iconResId, String text) {
+    private void addWideActionButton(int iconResId, String text, View.OnClickListener listener) {
         LinearLayout button = new LinearLayout(this);
         button.setBackgroundResource(R.drawable.add_trip_wide_action_background);
         button.setGravity(android.view.Gravity.CENTER_VERTICAL);
@@ -180,6 +196,7 @@ public class AddTripActivity extends AppCompatActivity {
         button.setPadding(dpToPx(18), 0, dpToPx(16), 0);
         button.setClickable(true);
         button.setFocusable(true);
+        button.setOnClickListener(listener);
 
         ImageView icon = new ImageView(this);
         icon.setImageResource(iconResId);
@@ -216,10 +233,14 @@ public class AddTripActivity extends AppCompatActivity {
                     if (which == 2) {
                         dialog.dismiss();
                     } else {
-                        Toast.makeText(this, options[which], Toast.LENGTH_SHORT).show();
+                        openCoverPhotoPicker();
                     }
                 })
                 .show();
+    }
+
+    private void openCoverPhotoPicker() {
+        coverPhotoPicker.launch(new String[]{"image/*"});
     }
 
     private void showDatePicker(boolean isStartDate) {
@@ -272,6 +293,34 @@ public class AddTripActivity extends AppCompatActivity {
             return;
         }
 
+        long id = insertTripFromForm();
+        if (id == -1) {
+            Toast.makeText(this, "Impossible d'enregistrer le voyage", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        Toast.makeText(this, "Voyage enregistre", Toast.LENGTH_SHORT).show();
+        finish();
+    }
+
+    private void saveTripAndOpenStep() {
+        if (!validateRequiredFields()) {
+            return;
+        }
+
+        long id = insertTripFromForm();
+        if (id == -1) {
+            Toast.makeText(this, "Impossible d'enregistrer le voyage", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        Intent intent = new Intent(this, AddStepActivity.class);
+        intent.putExtra(AddStepActivity.EXTRA_TRIP_ID, id);
+        startActivity(intent);
+        finish();
+    }
+
+    private long insertTripFromForm() {
         Trip trip = new Trip();
         trip.setUserId(getConnectedUserId());
         trip.setTripType(tripType);
@@ -286,17 +335,10 @@ public class AddTripActivity extends AppCompatActivity {
         trip.setHotelAddress(valueOf(hotelAddressEditText));
         trip.setHotelPhone(valueOf(hotelPhoneEditText));
         trip.setNotes(valueOf(notesEditText));
-        trip.setCoverPhotoPath(null);
+        trip.setCoverPhotoPath(selectedCoverPhotoUri);
         trip.setCreatedAt(String.valueOf(new Date().getTime()));
 
-        long id = tripDao.insertTrip(trip);
-        if (id == -1) {
-            Toast.makeText(this, "Impossible d'enregistrer le voyage", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        Toast.makeText(this, "Voyage enregistre", Toast.LENGTH_SHORT).show();
-        finish();
+        return tripDao.insertTrip(trip);
     }
 
     private boolean validateRequiredFields() {

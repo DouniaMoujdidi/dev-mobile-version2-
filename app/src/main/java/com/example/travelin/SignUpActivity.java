@@ -116,7 +116,7 @@ public class SignUpActivity extends Activity {
 
             @Override
             public void onCancel() {
-                Toast.makeText(SignUpActivity.this, "Facebook sign in cancelled", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignUpActivity.this, "Connexion Facebook annulee", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -150,7 +150,7 @@ public class SignUpActivity extends Activity {
                                     .build();
                             auth.getCurrentUser().updateProfile(profileUpdates);
                         }
-                        Toast.makeText(this, "Account created successfully", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Compte cree avec succes", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(SignUpActivity.this, SignInActivity.class));
                         finish();
                     } else {
@@ -194,7 +194,7 @@ public class SignUpActivity extends Activity {
         auth.signInWithCredential(credential)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(this, "Google sign in successful", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Connexion Google reussie", Toast.LENGTH_SHORT).show();
                     } else {
                         showAuthError(task.getException());
                     }
@@ -206,7 +206,7 @@ public class SignUpActivity extends Activity {
         auth.signInWithCredential(credential)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(this, "Facebook sign in successful", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Connexion Facebook reussie", Toast.LENGTH_SHORT).show();
                     } else {
                         showAuthError(task.getException());
                     }
@@ -215,22 +215,22 @@ public class SignUpActivity extends Activity {
 
     private boolean validateSignUp(String fullName, String email, String password, String confirmPassword) {
         if (fullName.length() < 2) {
-            fullNameEditText.setError("Enter your full name");
+            fullNameEditText.setError("Entrez votre nom complet");
             fullNameEditText.requestFocus();
             return false;
         }
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            emailEditText.setError("Enter a valid email");
+            emailEditText.setError("Entrez un e-mail valide");
             emailEditText.requestFocus();
             return false;
         }
         if (password.length() < 6) {
-            passwordEditText.setError("Password must be at least 6 characters");
+            passwordEditText.setError("Le mot de passe doit contenir au moins 6 caracteres");
             passwordEditText.requestFocus();
             return false;
         }
         if (!password.equals(confirmPassword)) {
-            confirmPasswordEditText.setError("Passwords do not match");
+            confirmPasswordEditText.setError("Les mots de passe ne correspondent pas");
             confirmPasswordEditText.requestFocus();
             return false;
         }
@@ -241,7 +241,7 @@ public class SignUpActivity extends Activity {
         if (auth != null) {
             return true;
         }
-        Toast.makeText(this, "Add app/google-services.json from Firebase Console first", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Ajoutez d'abord app/google-services.json depuis Firebase Console", Toast.LENGTH_LONG).show();
         return false;
     }
 
@@ -249,7 +249,7 @@ public class SignUpActivity extends Activity {
         if (!getWebClientId().startsWith("YOUR_")) {
             return true;
         }
-        Toast.makeText(this, "Configure default_web_client_id from Firebase", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Configurez default_web_client_id depuis Firebase", Toast.LENGTH_LONG).show();
         return false;
     }
 
@@ -271,18 +271,18 @@ public class SignUpActivity extends Activity {
                 && !getString(R.string.facebook_client_token).startsWith("YOUR_")) {
             return true;
         }
-        Toast.makeText(this, "Configure Facebook App ID and Client Token", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Configurez l'App ID Facebook et le Client Token", Toast.LENGTH_LONG).show();
         return false;
     }
 
     private void showAuthError(Exception exception) {
-        String message = exception == null ? "Authentication failed" : exception.getMessage();
+        String message = exception == null ? "Authentification echouee" : exception.getMessage();
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
     private void setLoading(boolean isLoading) {
         signUpButton.setEnabled(!isLoading);
-        signUpButton.setText(isLoading ? "Please wait..." : "Sign Up");
+        signUpButton.setText(isLoading ? "Veuillez patienter..." : "Creer un compte");
     }
 
     private void showLanguageMenu() {
@@ -336,23 +336,23 @@ public class SignUpActivity extends Activity {
             haveAccountText.setText("لديك حساب بالفعل؟");
             signInButton.setText("تسجيل الدخول");
         } else {
-            languageText.setText("English v");
-            titleText.setText("Create your Travelin account");
-            subtitleText.setText("Start your journey with us");
-            fullNameEditText.setHint("Full Name");
-            emailEditText.setHint("Email or Phone Number");
-            passwordEditText.setHint("Password");
-            confirmPasswordEditText.setHint("Confirm Password");
-            signUpButton.setText("Sign Up");
-            socialLabelText.setText("or sign up with");
-            haveAccountText.setText("Already have an account?");
-            signInButton.setText("Sign In");
+            languageText.setText("Francais v");
+            titleText.setText("Creer votre compte Travelin");
+            subtitleText.setText("Commencez votre voyage avec nous");
+            fullNameEditText.setHint("Nom complet");
+            emailEditText.setHint("E-mail ou numero de telephone");
+            passwordEditText.setHint("Mot de passe");
+            confirmPasswordEditText.setHint("Confirmer le mot de passe");
+            signUpButton.setText("Creer un compte");
+            socialLabelText.setText("ou s'inscrire avec");
+            haveAccountText.setText("Vous avez deja un compte ?");
+            signInButton.setText("Se connecter");
         }
     }
 
     private String getSavedLanguage() {
         SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        return preferences.getString(KEY_LANGUAGE, LANG_EN);
+        return preferences.getString(KEY_LANGUAGE, LANG_FR);
     }
 
     private void saveLanguage(String language) {
