@@ -12,10 +12,6 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-main-52:\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.example.travelin.app-debug-50:/layout_activity_trip_detail.xml.flat",
-        "source": "com.example.travelin.app-main-52:/layout/activity_trip_detail.xml"
-    },
-    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\drawable_add_trip_action_background.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-main-52:\\drawable\\add_trip_action_background.xml"
     },
@@ -36,12 +32,12 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-main-52:\\drawable\\home_header_background.xml"
     },
     {
-        "merged": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\drawable_ic_nav_settings.xml.flat",
-        "source": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-main-52:\\drawable\\ic_nav_settings.xml"
-    },
-    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\layout_activity_trip_detail.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-main-52:\\layout\\activity_trip_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\drawable_ic_nav_settings.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-main-52:\\drawable\\ic_nav_settings.xml"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\drawable_ic_add_trip_flight_route_image.png.flat",
@@ -96,10 +92,6 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-main-52:\\drawable\\home_bottom_nav_background.xml"
     },
     {
-        "merged": "com.example.travelin.app-debug-50:/menu_home_bottom_nav_menu.xml.flat",
-        "source": "com.example.travelin.app-main-52:/menu/home_bottom_nav_menu.xml"
-    },
-    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\drawable_ic_trip_close.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-main-52:\\drawable\\ic_trip_close.xml"
     },
@@ -120,10 +112,6 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-main-52:\\drawable\\nav_home.png"
     },
     {
-        "merged": "com.example.travelin.app-debug-50:/layout_activity_get_started.xml.flat",
-        "source": "com.example.travelin.app-main-52:/layout/activity_get_started.xml"
-    },
-    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\drawable_add_step_photo_background.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-main-52:\\drawable\\add_step_photo_background.xml"
     },
@@ -136,20 +124,16 @@
         "source": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-main-52:\\drawable\\ic_field_hotel_address.png"
     },
     {
-        "merged": "com.example.travelin.app-debug-50:/layout_activity_sign_up.xml.flat",
-        "source": "com.example.travelin.app-main-52:/layout/activity_sign_up.xml"
-    },
-    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\drawable_detail_icon_bubble.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-main-52:\\drawable\\detail_icon_bubble.xml"
     },
     {
-        "merged": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\drawable_ic_nav_memories.xml.flat",
-        "source": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-main-52:\\drawable\\ic_nav_memories.xml"
-    },
-    {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\layout_activity_get_started.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-main-52:\\layout\\activity_get_started.xml"
+    },
+    {
+        "merged": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\drawable_ic_nav_memories.xml.flat",
+        "source": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-main-52:\\drawable\\ic_nav_memories.xml"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\layout_item_add_trip_field.xml.flat",
@@ -202,10 +186,6 @@
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\drawable_ic_trip_calendar_image.png.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-main-52:\\drawable\\ic_trip_calendar_image.png"
-    },
-    {
-        "merged": "com.example.travelin.app-debug-50:/layout_activity_sign_in.xml.flat",
-        "source": "com.example.travelin.app-main-52:/layout/activity_sign_in.xml"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\drawable_add_step_save_button.xml.flat",
@@ -278,10 +258,6 @@
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\drawable_notification_card_background.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-main-52:\\drawable\\notification_card_background.xml"
-    },
-    {
-        "merged": "com.example.travelin.app-debug-50:/layout_activity_add_step.xml.flat",
-        "source": "com.example.travelin.app-main-52:/layout/activity_add_step.xml"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\drawable_ic_detail_share.xml.flat",
@@ -482,10 +458,6 @@
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\drawable_detail_primary_button.xml.flat",
         "source": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-main-52:\\drawable\\detail_primary_button.xml"
-    },
-    {
-        "merged": "com.example.travelin.app-debug-50:/layout_activity_home.xml.flat",
-        "source": "com.example.travelin.app-main-52:/layout/activity_home.xml"
     },
     {
         "merged": "C:\\Users\\HP\\.gradle\\daemon\\9.0.0\\com.example.travelin.app-debug-50:\\drawable_ic_notification_bell.xml.flat",
