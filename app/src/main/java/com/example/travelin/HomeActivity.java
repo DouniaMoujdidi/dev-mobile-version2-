@@ -1,5 +1,6 @@
 package com.example.travelin;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.TextView;
@@ -48,7 +49,8 @@ public class HomeActivity extends AppCompatActivity {
             } else if (itemId == R.id.nav_memories) {
                 Toast.makeText(this, "Memories clicked", Toast.LENGTH_SHORT).show();
             } else if (itemId == R.id.nav_alerts) {
-                Toast.makeText(this, "Alerts clicked", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, NotificationsActivity.class));
+                return true;
             } else if (itemId == R.id.nav_settings) {
                 Toast.makeText(this, "Settings clicked", Toast.LENGTH_SHORT).show();
             }

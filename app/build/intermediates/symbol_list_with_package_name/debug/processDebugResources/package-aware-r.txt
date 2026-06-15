@@ -3687,9 +3687,7 @@ drawable ic_add_trip_back
 drawable ic_add_trip_camera
 drawable ic_add_trip_chevron_right
 drawable ic_add_trip_flight_route_image
-drawable ic_add_trip_image
 drawable ic_add_trip_info
-drawable ic_add_trip_steps
 drawable ic_arrow_back_black_24
 drawable ic_call_answer
 drawable ic_call_answer_low
@@ -3701,7 +3699,6 @@ drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_expand_less_22px
 drawable ic_expand_more_22px
-drawable ic_facebook
 drawable ic_field_destination
 drawable ic_field_hotel
 drawable ic_field_hotel_address
@@ -3709,6 +3706,7 @@ drawable ic_field_notes
 drawable ic_field_phone
 drawable ic_field_trip_name
 drawable ic_keyboard_black_24dp
+drawable ic_launcher_foreground
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
@@ -3721,6 +3719,13 @@ drawable ic_nav_alerts
 drawable ic_nav_home
 drawable ic_nav_memories
 drawable ic_nav_settings
+drawable ic_notification
+drawable ic_notification_bell
+drawable ic_notification_info
+drawable ic_notification_location
+drawable ic_notification_sync
+drawable ic_notification_ticket
+drawable ic_notification_trip
 drawable ic_other_sign_in
 drawable ic_passkey
 drawable ic_password
@@ -3797,11 +3802,13 @@ drawable notification_bg_low_normal
 drawable notification_bg_low_pressed
 drawable notification_bg_normal
 drawable notification_bg_normal_pressed
+drawable notification_card_background
 drawable notification_icon_background
 drawable notification_oversize_large_icon_bg
 drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
+drawable notification_unread_dot
 drawable notify_panel_notification_icon_bg
 drawable rounded_button
 drawable rounded_card
@@ -3945,6 +3952,7 @@ id btn_facebook
 id btn_go_sign_in
 id btn_go_sign_up
 id btn_google
+id btn_notifications_back
 id btn_save_trip
 id btn_sign_in
 id btn_sign_up
@@ -4102,6 +4110,7 @@ id ignoreRequest
 id image
 id img_beach
 id img_field_icon
+id img_notification_icon
 id img_trip
 id immediateStop
 id included
@@ -4213,6 +4222,7 @@ id north
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id notification_unread_dot
 id off
 id on
 id open_graph
@@ -4265,6 +4275,7 @@ id radio_future
 id radio_past
 id ratio
 id rectangles
+id recycler_notifications
 id recycler_trips
 id report_drawn
 id retreat
@@ -4401,6 +4412,10 @@ id txt_have_account
 id txt_language
 id txt_nights
 id txt_no_account
+id txt_notification_date
+id txt_notification_description
+id txt_notification_section
+id txt_notification_title
 id txt_section
 id txt_sign_in_subtitle
 id txt_sign_in_title
@@ -4558,6 +4573,7 @@ layout abc_tooltip
 layout activity_add_trip
 layout activity_get_started
 layout activity_home
+layout activity_notifications
 layout activity_sign_in
 layout activity_sign_up
 layout activity_splash
@@ -4588,6 +4604,7 @@ layout fragment_trip_type_bottom_sheet
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_add_trip_field
+layout item_notification
 layout item_trip
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
